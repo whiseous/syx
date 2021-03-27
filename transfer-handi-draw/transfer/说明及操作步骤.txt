@@ -1,0 +1,39 @@
+使用说明：
+选择上传一张图片
+
+按转换按钮
+
+经过一段时间的转换目标图片将转化为手绘风格，
+弹出转换后的图片，
+直接关闭图片，弹出选择保存位置，输入自定义名称，
+即保存成功！
+
+支持多次转换
+
+可查看日志信息
+
+****以下为python.py打包为exe文件方式********
+|----------------------安装需要虚拟python环境-----------------------|
+
+虚拟环境：
+安装虚拟命令：
+pip install pipenv
+
+选择喜欢的路径开始建立环境，之后的一切工作将在此进行
+cd 跳转
+dir 查看文件
+c: 跳转至c盘
+
+#建立虚拟环境
+pipenv install
+#进入虚拟环境
+pipenv shell
+
+#打包的模块也要安装
+pip install pyinstaller
+#安装模块
+pip install .py（目标py中出现的所有均需要安装）
+
+执行打包命令
+pyinstaller -Fw 路径
+eg.pyinstaller -Fw G:\newfile\drawgui.py”
