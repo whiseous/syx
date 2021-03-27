@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>登录</title>
+		<script type="text/javascript">
+		
+		function getQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		    var r = window.location.search.substr(1).match(reg);
+		    if (r != null) return unescape(r[2]); return null;
+		 }	
+		
+		var conti=getQueryString("f");
+		if(conti=='-1')
+		{
+			alert("未开放系统！");
+		}
+		else if(conti=='-2')
+		{
+			alert("系统已经关闭了！");
+		}
+		
+		</script>
+		<style type="text/css">
+			.cls1 {background-color: #F0F0F0;}
+			tr:hover {color: aqua;}
+			#wrapper {width: 1000px;margin: 0 auto;}
+			#header {width: 1000px;height: 100px;}
+			#container {width: 1000px;margin-top: 5px;}
+			#leftbar {float:left;width: 600px;height: 400px;}
+			#main {float:left;width: 400px;height: 400px;}
+			#footer {clear:both;width: 1000px;height: 120px;}
+			.input{
+				height: 30px;
+				width: 300px;
+				margin:10px 50px 5px 0px;
+			}
+			.title{
+				margin:0px 50px 5px 20px;
+				
+			}
+			select{
+				font-color:#BEBEBE;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header"></div>
+			<div id="container">
+				<div id="leftbar">
+					<br></br>
+						<img src="loginimg.png"width="480" height="300" border="0"/>
+					<br></br>
+				</div>
+				<div id="main">
+					<form action="Login.action" method="get">
+						<br></br>
+						<font class="title" color=#7B7B7B size="5">研究生导师自选系统</font>
+						<br></br>
+						<input type="text" class="input"  placeholder="请输入账号" name="id" id="id"/>
+						<input type="password" class="input"  placeholder="请输入密码" name="pwd" id="pwd"/>
+						<select name="identity" class="input">
+							<option value="student">研究生学生</option>
+							<option value="teacher">研究生导师</option>
+							<option value="coladmin">学院管理员</option>
+							<option value="uniadmin">校级管理员</option>
+						</select>
+						<br></br>
+						<font color=#9D9D9D>验证码</font>
+						<input type="text" name="useryzm">
+						<img src="yzm" />
+						<input type="submit" class="input" value="登录"/>
+					</form>
+				</div>
+			</div>
+			<div id="footer"></div>
+		</div>
+	</body>
+</html>
